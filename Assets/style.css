@@ -4,6 +4,10 @@ body {
   line-height: 1;
 }
 
+main {
+  margin-bottom: 80px;
+}
+
 textarea {
   background: transparent;
   border: none;
@@ -26,7 +30,7 @@ textarea {
 }
 
 .time-block {
-  text-align: center;
+  /* text-align: center; */
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -41,6 +45,7 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  border-bottom: 1px dashed #000000;
   border-left: 1px dashed #000000;
 }
 
@@ -70,4 +75,9 @@ textarea {
 .saveBtn i:hover {
   font-size: 25px;
   transition: all .3s ease-in-out;
+}
+
+footer {
+  background-color: #3e403e;
+  border-top: solid black 6px;
 }
