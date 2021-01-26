@@ -24,20 +24,53 @@ $(document).ready(function () {
         }
     });
 
-    //     function init() {
-    //         $('.row textarea').each(function (i) {
-    //             var storedData = JSON.parse(localStorage.getItem('schedule'));
-
-    //             if (storedData !== null) {
-    //                 schedule = storedData;
-    //             }
-
-    //             renderSchedule();
-    //         }
-
-    // function renderSchedule() {
-
-    //             }
+    function initSchedule() {
+        var saved9 = JSON.parse(localStorage.getItem('hour9'));
+        console.log(saved9)
+        if (saved9 !== null) {
+            $("#hour9").text(saved9);
+        }
+        var saved10 = JSON.parse(localStorage.getItem('hour10'));
+        console.log(saved10)
+        if (saved10 !== null) {
+            $("#hour10").text(saved10);
+        }
+        var saved11 = JSON.parse(localStorage.getItem('hour11'));
+        console.log(saved11)
+        if (saved11 !== null) {
+            $("#hour11").text(saved11);
+        }
+        var saved12 = JSON.parse(localStorage.getItem('hour12'));
+        console.log(saved12)
+        if (saved12 !== null) {
+            $("#hour12").text(saved12);
+        }
+        var saved13 = JSON.parse(localStorage.getItem('hour13'));
+        console.log(saved13)
+        if (saved13 !== null) {
+            $("#hour13").text(saved13);
+        }
+        var saved14 = JSON.parse(localStorage.getItem('hour14'));
+        console.log(saved14)
+        if (saved14 !== null) {
+            $("#hour14").text(saved14);
+        }
+        var saved15 = JSON.parse(localStorage.getItem('hour15'));
+        console.log(saved15)
+        if (saved15 !== null) {
+            $("#hour15").text(saved15);
+        }
+        var saved16 = JSON.parse(localStorage.getItem('hour16'));
+        console.log(saved16)
+        if (saved16 !== null) {
+            $("#hour16").text(saved16);
+        }
+        var saved17 = JSON.parse(localStorage.getItem('hour17'));
+        console.log(saved17)
+        if (saved17 !== null) {
+            $("#hour17").text(saved17);
+        }
+    }
 
     function saveHour() {
         $("#saveBtn9").on("click", function () {
@@ -95,7 +128,7 @@ $(document).ready(function () {
         })
     }
 
+    initSchedule()
     saveHour()
 
-    // init();
 });
