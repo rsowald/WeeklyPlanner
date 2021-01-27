@@ -3,9 +3,6 @@ $(document).ready(function () {
     //Grab current day and date from dayjs and put in header
     $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
 
-    //If dayjs().format(HH:mm)===23:59, clear local storage?
-
-
     var currentHour = dayjs().hour();
     console.log(currentHour);
 
@@ -26,26 +23,24 @@ $(document).ready(function () {
 
     //Iterate through all saved schedule hours and render in time blocks 
     for (var i = 9; i < 18; i++) {
-        $('#hour' + i).text(JSON.parse(localStorage.getItem('hour' + i)));
+        var hour = 'hour' + i;
+        var hourText = localStorage.getItem(hour);
+        $('#' + hour).val(hourText);
     }
 
     // Attach "ON CLICK" event to all the save buttons
-    $(".saveBtn").on("click", function (event) {
-        //prevent default so I can apply a for loop to all the time blocks
-        event.preventDefault();
-
-        // Iterate through hours 9 to 17
-        for (var i = 9; i < 18; i++) {
-            localStorage.setItem("hour" + i, JSON.stringify($("#hour" + i).val()));
-            console.log("hour" + i);
-        }
+    $(".saveBtn").on("click", function () {
+        var timeBlock = $(this).siblings("textarea");
+        var hourText = timeBlock.val();
+        var hour = timeBlock.attr('id');
+        localStorage.setItem(hour, hourText);
     });
 
+    //reset button to clear all time blocks if desired (not automatically cleared in case of recurring events)
     $('#reset').on("click", function () {
         for (var i = 9; i < 18; i++) {
             localStorage.removeItem("hour" + i);
-            $('#hour' + i).text("");
+            $('#hour' + i).val("");
         }
     })
-
 });
