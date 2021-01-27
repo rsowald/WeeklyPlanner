@@ -24,6 +24,7 @@ $(document).ready(function () {
         }
     });
 
+    //Iterate through all saved schedule hours and render in time blocks 
     for (var i = 9; i < 18; i++) {
         $('#hour' + i).text(JSON.parse(localStorage.getItem('hour' + i)));
     }
@@ -40,5 +41,11 @@ $(document).ready(function () {
         }
     });
 
+    $('#reset').on("click", function () {
+        for (var i = 9; i < 18; i++) {
+            localStorage.removeItem("hour" + i);
+            $('#hour' + i).text("");
+        }
+    })
 
 });

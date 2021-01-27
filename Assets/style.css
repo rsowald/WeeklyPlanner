@@ -25,6 +25,10 @@ textarea {
   border-bottom: 10px solid black;
 }
 
+header .btn {
+  background-color: #06AED5;
+}
+
 .description {
   white-space: pre-wrap;
 }
