@@ -30,13 +30,15 @@ $(document).ready(function () {
 
     // Attach "ON CLICK" event to all the save buttons
     $(".saveBtn").on("click", function () {
+        //Grab the text from the textarea that is the sibling of the clicked save button
         var timeBlock = $(this).siblings("textarea");
         var hourText = timeBlock.val();
+        //Grab the id from that same textarea
         var hour = timeBlock.attr('id');
         localStorage.setItem(hour, hourText);
     });
 
-    //reset button to clear all time blocks if desired (not automatically cleared in case of recurring events)
+    //Reset button to clear all time blocks if desired (not automatically cleared in case of recurring events)
     $('#reset').on("click", function () {
         for (var i = 9; i < 18; i++) {
             localStorage.removeItem("hour" + i);

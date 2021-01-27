@@ -34,7 +34,6 @@ header .btn {
 }
 
 .time-block {
-  /* text-align: center; */
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -64,7 +63,7 @@ header .btn {
 }
 
 .future {
-  background-color: #5edd5e;
+  background-color: #3aa3a3;
   color: white;
 }
 
