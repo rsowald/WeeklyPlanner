@@ -73,59 +73,16 @@ $(document).ready(function () {
     }
 
     function saveHour() {
-        $("#saveBtn9").on("click", function () {
-            var schedule = $('#hour9').val();
-            console.log(schedule);
-            localStorage.setItem("hour9", JSON.stringify(schedule));
-        })
+        // Attach "ON CLICK" events to the save buttons
+        $(".saveBtn").on("click", function (event) {
+            event.preventDefault();
 
-        $("#saveBtn10").on("click", function () {
-            var schedule = $('#hour10').val();
-            console.log(schedule);
-            localStorage.setItem("hour10", JSON.stringify(schedule));
-        })
-
-        $("#saveBtn11").on("click", function () {
-            var schedule = $('#hour11').val();
-            console.log(schedule);
-            localStorage.setItem("hour11", JSON.stringify(schedule));
-        })
-
-        $("#saveBtn12").on("click", function () {
-            var schedule = $('#hour12').val();
-            console.log(schedule);
-            localStorage.setItem("hour12", JSON.stringify(schedule));
-        })
-
-        $("#saveBtn13").on("click", function () {
-            var schedule = $('#hour13').val();
-            console.log(schedule);
-            localStorage.setItem("hour13", JSON.stringify(schedule));
-        })
-
-        $("#saveBtn14").on("click", function () {
-            var schedule = $('#hour14').val();
-            console.log(schedule);
-            localStorage.setItem("hour14", JSON.stringify(schedule));
-        })
-
-        $("#saveBtn15").on("click", function () {
-            var schedule = $('#hour15').val();
-            console.log(schedule);
-            localStorage.setItem("hour15", JSON.stringify(schedule));
-        })
-
-        $("#saveBtn16").on("click", function () {
-            var schedule = $('#hour16').val();
-            console.log(schedule);
-            localStorage.setItem("hour16", JSON.stringify(schedule));
-        })
-
-        $("#saveBtn17").on("click", function () {
-            var schedule = $('#hour17').val();
-            console.log(schedule);
-            localStorage.setItem("hour17", JSON.stringify(schedule));
-        })
+            // Iterate through hours 9 to 17
+            for (var i = 9; i < 18; i++) {
+                localStorage.setItem("hour" + i, JSON.stringify($("#hour" + i).val()));
+                console.log("hour" + i);
+            }
+        });
     }
 
     initSchedule()
